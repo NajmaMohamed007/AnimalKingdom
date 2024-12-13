@@ -14,6 +14,7 @@ An interactive web application that allows users to add and search for animals, 
 - **Frontend:** JavaScript, Embedded JavaScript (EJS)
 - **Backend:** Node.js
 - **Database:** SQL
+-  **HTML:** CSS
 - **Version Control:** Git and GitHub (Command-line application)
 
 ## Setup Instructions
