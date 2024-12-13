@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Kingdom</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h1 style="color: white;">Animal Kingdom</h1>
+        </div>
+        <div class="nav-links">
+            <a href="/about">About</a>
+            <a href="/search">Search</a>
+        </div>
+    </nav>
+    <header>
+        <h2>Welcome to Animal Kingdom!</h2>
+        <p>A fun and interactive way for kids to learn mathematics with animals!</p>
+    </header>
+
+    <!-- Animal List Section -->
+    <section>
+        <h3>Animals:</h3>
+        <% if (animals.length > 0) { %>
+            <ul>
+                <% animals.forEach(animal => { %>
+                    <li>
+                        <strong>Name:</strong> <%= animal.animal_name %>, 
+                        <strong>Species:</strong> <%= animal.species %>, 
+                        <strong>Continent:</strong> <%= animal.continent_name %>
+                    </li>
+                <% }); %>
+            </ul>
+        <% } else { %>
+            <p>No animals available at the moment.</p>
+        <% } %>
+    </section>
+
+    <!-- Add New Animal Form -->
+    <section>
+        <h3>Add a New Animal:</h3>
+        <form action="/" method="POST">
+            <label for="animal_name">Animal Name:</label>
+            <input type="text" id="animal_name" name="animal_name" required>
+
+            <label for="species">Species:</label>
+            <input type="text" id="species" name="species" required>
+
+            <label for="continent">Continent:</label>
+            <input type="text" id="continent" name="continent" required>
+
+            <input type="submit" value="Add Animal">
+        </form>
+    </section>
+</body>
+</html>

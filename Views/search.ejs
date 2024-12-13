@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animal Kingdom</title>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h1 style="color: white;">Animal Kingdom</h1>
+        </div>
+        <div class="nav-links">
+            <a href="/about">About</a>
+            <a href="/search">Home</a>
+        </div>
+    </nav>
+    <header>
+        <h2>Welcome to Animal Kingdom!</h2>
+        <p>A fun and interactive way for kids to learn mathematics with animals!</p>
+    </header>
+
+    <!-- Search form -->
+    <form action="/search" method="get">
+        <input id="search_box" type="text" name="search_text" value="<%= searchText %>" placeholder="Search for animals or species">
+        <input type="submit" value="Search">
+    </form>
+
+    <!-- Display search results -->
+    <% if (animals.length > 0) { %>
+        <h3>Search Results:</h3>
+        <ul>
+            <% animals.forEach(animal => { %>
+                <li>
+                    <strong>Name:</strong> <%= animal.animal_name %>, 
+                    <strong>Species:</strong> <%= animal.species %>, 
+                    <strong>Continent:</strong> <%= animal.continent_name %>
+                </li>
+            <% }); %>
+        </ul>
+    <% } else if (searchText) { %>
+        <p>No results found for "<%= searchText %>". Try searching for something else!</p>
+    <% } %>
+</body>
+</html>
