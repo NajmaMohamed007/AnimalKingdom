@@ -3,32 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animal Kingdom</title>
+    <title>Animal Search</title>
 </head>
 <body>
-    <nav>
-        <div class="logo">
-            <h1 style="color: white;">Animal Kingdom</h1>
-        </div>
-        <div class="nav-links">
-            <a href="/about">About</a>
-            <a href="/search">Home</a>
-        </div>
-    </nav>
-    <header>
-        <h2>Welcome to Animal Kingdom!</h2>
-        <p>A fun and interactive way for kids to learn mathematics with animals!</p>
-    </header>
+    <h1>Search for Animals</h1>
 
-    <!-- Search form -->
+    <!-- Search Form -->
     <form action="/search" method="get">
         <input id="search_box" type="text" name="search_text" value="<%= searchText %>" placeholder="Search for animals or species">
         <input type="submit" value="Search">
     </form>
 
-    <!-- Display search results -->
-    <% if (animals.length > 0) { %>
-        <h3>Search Results:</h3>
+    <!-- Results -->
+    <% if (animals && animals.length > 0) { %>
+        <h2>Search Results:</h2>
         <ul>
             <% animals.forEach(animal => { %>
                 <li>
@@ -39,7 +27,7 @@
             <% }); %>
         </ul>
     <% } else if (searchText) { %>
-        <p>No results found for "<%= searchText %>". Try searching for something else!</p>
+        <p>No animals found matching your search: "<%= searchText %>"</p>
     <% } %>
 </body>
 </html>
