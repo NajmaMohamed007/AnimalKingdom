@@ -6,17 +6,19 @@ const port = 8000;
 
 const mysql = require('mysql2');
 
-// Create connection
+
 const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'portfolio_app',
-  password: 'qwertyuiop',
-  database: 'portfolio'
+  host: 'localhost',   // Database host
+  user: 'root',        // Your database user
+  password: 'password',// Your database password
+  database: 'AnimalDatabase' // Your database name
 });
 
+// Connect to the database
 db.connect((err) => {
   if (err) {
-    throw err;
+    console.error('Error connecting to the database:', err.stack);
+    return;
   }
   console.log('Connected to the database');
 });
