@@ -3,7 +3,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const port = 8000;
-const mysql = require('mysql2');
+const mysql2 = require('mysql2');
 
 
 const db = mysql2.createConnection({
