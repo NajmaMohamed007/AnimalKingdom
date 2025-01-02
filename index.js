@@ -4,7 +4,7 @@ const path = require('path');
 const app = express();
 const port = 8000;
 const mysql2 = require('mysql2');
-
+console.log(mysql2); 
 
 const db = mysql2.createConnection({
   host: 'localhost',
@@ -12,6 +12,7 @@ const db = mysql2.createConnection({
   password: 'qwertyuiop',
   database: 'portfolio'
 });
+
 
 // Connect to the database
 db.connect((err) => {
