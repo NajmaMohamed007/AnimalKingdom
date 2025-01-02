@@ -2,9 +2,8 @@ const express = require('express');
 const path = require('path');
 const app = express();
 const port = 8000;
-const mysql = require('mysql2');  // Use only mysql2
+const mysql = require('mysql2');
 
-// Database connection
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'portfolio_app',
