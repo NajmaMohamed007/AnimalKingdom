@@ -5,11 +5,14 @@ const app = express();
 const port = 8000;
 
 
+const mysql = require('mysql2');
+
+
 const db = mysql.createConnection({
-  host: 'localhost',   // Database host
-  user: 'root',        // Your database user
-  password: 'password',// Your database password
-  database: 'AnimalDatabase' // Your database name
+  host: 'localhost',    // Database host (default: 'localhost')
+  user: 'root',         // Database user (replace with your username)
+  password: 'password', // Database password (replace with your password)
+  database: 'AnimalDatabase' // Database name (replace with your database name)
 });
 
 // Connect to the database
